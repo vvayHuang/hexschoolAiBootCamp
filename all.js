@@ -24,10 +24,6 @@ $('.qa-item').click(function (e) {
 
 
 // 下拉選單
-$('.product-category-filter').click(function (e) {
-    $('.dropdown-menu').toggleClass('show');
-});
-
 $('.filter').click(function (e) {
     $('#filter').toggleClass('show');
 });
@@ -44,7 +40,7 @@ $('.old-to-new').click(function (e) {
     $('.dropdown-text').text($('.old-to-new').text());
 });
 
-// swiper卡片輪播
+// 卡片輪播
 const swiper = new Swiper('.swiper', {
     spaceBetween: 24,
     breakpoints: {
