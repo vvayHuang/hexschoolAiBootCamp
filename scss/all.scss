@@ -1,10 +1,10 @@
 // google icon
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 // bs版本reset
-@import './node_modules/bootstrap/scss/bootstrap-reboot.scss';
+@import '../node_modules/bootstrap/scss/bootstrap-reboot.scss';
 // bs格線系統及通用類別
-@import './node_modules/bootstrap/scss/bootstrap-grid.scss';
-@import './node_modules/bootstrap/scss/bootstrap-utilities.scss';
+@import '../node_modules/bootstrap/scss/bootstrap-grid.scss';
+@import '../node_modules/bootstrap/scss/utilities';
 // 字型
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
 
@@ -349,9 +349,11 @@ header {
 
 .our-partner {
     margin-bottom: 160px;
+
     @include mobile() {
         margin-bottom: 120px;
     }
+
     &-title {
         font-size: 32px;
         font-weight: 900;
@@ -446,7 +448,7 @@ header {
         }
 
         &-text {
-            margin-bottom: auto;
+            margin-bottom: 0;
 
             .material-icons {
                 font-size: 13px;
@@ -455,7 +457,7 @@ header {
 
         &-author {
             display: flex;
-
+            margin-top: auto;
             .author {
                 &-img {
                     margin-right: 16px;
@@ -494,7 +496,7 @@ header {
 }
 
 .product {
-    color: $black;
+    color: $black-100;
     padding-top: 160px;
     padding-bottom: 160px;
 
@@ -624,12 +626,8 @@ header {
 
         }
 
-        &-list {
-            list-style: none;
-            padding: 0;
+        &-btns {
             display: flex;
-            justify-content: space-between;
-            margin: 0;
 
             @include mobile() {
                 order: 1;
@@ -641,25 +639,28 @@ header {
         }
 
         &-item {
-            padding: 8px 16px;
             border-radius: 16px;
 
-            &:hover {
-                background-color: $black-20;
-
-                a {
-                    color: $black-100;
-                }
-            }
         }
-
-        &-link {
-            text-decoration: none;
+        
+        &-btn {
             color: $black-60;
-
+            cursor: pointer;
+            border: 0;
+            border-radius: 16px;
+            padding: 8px 16px;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            background-color: transparent ;
             &.active {
                 color: $black-100;
+                background-color: $black-20;
                 font-weight: 700;
+            }
+            &:hover {
+                background-color: $black-20;
+    
             }
 
 
@@ -678,7 +679,7 @@ header {
             flex-direction: column;
             border-radius: 16px;
             height: 100%;
-
+            border: 1px solid $black-20;
             &-img {
                 transition: all ease 1s;
                 overflow: hidden;
@@ -698,16 +699,14 @@ header {
 
             &-body {
                 padding: 20px 32px;
-                border: 1px solid $black-20;
-                border-top: none;
-                flex-grow: 1;
-
+                border-top: 1px solid $black-20;
+                
                 a {
                     color: $black-100;
                 }
-
-                &:last-child {
-                    border-radius: 0 0 16px 16px;
+                &:nth-child(2){
+                    margin-bottom: auto;
+                    border-top: none;
                 }
             }
 
@@ -751,7 +750,7 @@ header {
 
     &-link {
         text-decoration: none;
-        color: $black;
+        color: $black-100;
         font-weight: 70;
         font-size: 14px;
         padding: 24px;
@@ -804,6 +803,8 @@ header {
 
     &-body {
         padding: 80px 0;
+        border-bottom: 1px solid $black-0;
+        border-top: 1px solid $black-0;
     }
 
     &-title {

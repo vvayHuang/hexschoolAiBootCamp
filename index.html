@@ -14,7 +14,7 @@
         <!-- 導覽列 -->
         <nav class="navbar">
             <!-- 導覽列logo -->
-            <h1 class="navbar-brand"><img src="img/logo-AI工具王.png" alt="logo-AI工具王"></h1>
+            <a href="index.html" class="navbar-brand"><img src="img/logo-AI工具王.png" alt="logo-AI工具王"></a>
             <!-- 漢堡選單圖示 -->
             <button type="button" class="navbar-btn">
                 <span class="material-icons">
@@ -217,7 +217,7 @@
                 <h2 class="product-title">這些超酷的應用，都來自 AI工具王</h2>
                 <div class="product-search-bar">
                     <span class="material-icons">search</span>
-                    <input type="text" name="search" placeholder="輸入關鍵字搜尋" class="product-search-bar-input">
+                    <input id="search" type="text" name="search" placeholder="輸入關鍵字搜尋" class="product-search-bar-input">
                 </div>
                 <div class="product-category">
                     <div class="product-category-dropdown">
@@ -239,31 +239,17 @@
                             </li>
                         </ul>
                     </div>
-                    <ul class="product-category-list">
-                        <li class="product-category-item">
-                            <a href="#" class="product-category-link active">全部</a>
-                        </li>
-                        <li class="product-category-item">
-                            <a href="#" class="product-category-link">聊天</a>
-                        </li>
-                        <li class="product-category-item">
-                            <a href="#" class="product-category-link">影像辨識</a>
-                        </li>
-                        <li class="product-category-item">
-                            <a href="#" class="product-category-link">翻譯</a>
-                        </li>
-                        <li class="product-category-item">
-                            <a href="#" class="product-category-link">行銷</a>
-                        </li>
-                        <li class="product-category-item">
-                            <a href="#" class="product-category-link">客服</a>
-                        </li>
-                        <li class="product-category-item">
-                            <a href="#" class="product-category-link">生產力</a>
-                        </li>
-                    </ul>
+                    <div class="product-category-btns">
+                        <button id="category-btn" class="product-category-btn active">全部</button>
+                        <button id="category-btn" class="product-category-btn">問答服務</button>
+                        <button id="category-btn" class="product-category-btn">虛擬客服</button>
+                        <button id="category-btn" class="product-category-btn">生活應用</button>
+                        <button id="category-btn" class="product-category-btn">程式知識</button>
+                        <button id="category-btn" class="product-category-btn">翻譯助手</button>
+                        <button id="category-btn" class="product-category-btn">行銷文案</button>
+                    </div>
                     <div class="product-category-dropdown">
-                        <button class="product-category-filter new-old" type="button">
+                        <button id="btn-sort" class="product-category-filter new-old" type="button">
                             <span class="dropdown-text">由新到舊</span>
                             <span class="material-icons">
                                 expand_more
@@ -271,16 +257,16 @@
                         </button>
                         <ul class="dropdown-menu" id="new-old">
                             <li>
-                                <a href="#" class="new-to-old">由新到舊</a>
+                                <a id="desc" href="#" class="new-to-old">由新到舊</a>
                             </li>
                             <li>
-                                <a href="#" class="old-to-new">由舊到新</a>
+                                <a id="asc" href="#" class="old-to-new">由舊到新</a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="product-list row row-cols-lg-3 row-cols-1 gy-3">
-                    <div class="col">
+                <div id="list" class="product-list row row-cols-lg-3 row-cols-1 gy-3">
+                    <!-- <div class="col">
                         <div class="card">
                             <div class="card-img"><img
                                     src="https://github.com/yinmin8610/2023-engineer-camp-f2e/blob/main/images/tool1.png?raw=true"
@@ -413,14 +399,14 @@
                                     </a></strong>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-                <ul class="pagination">
-                    <li class="pagination-item active"><a href="#" class="pagination-link">1</a></li>
+                <ul id="pagination" class="pagination">
+                    <!-- <li class="pagination-item active"><a href="#" class="pagination-link">1</a></li>
                     <li class="pagination-item"><a href="#" class="pagination-link">2</a></li>
                     <li class="pagination-item"><a href="#" class="pagination-link">3</a></li>
                     <li class="pagination-item"><a href="#" class="pagination-link">4</a></li>
-                    <li class="pagination-item"><a href="#" class="pagination-link">5</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">5</a></li> -->
                 </ul>
             </div>
         </section>
@@ -430,7 +416,7 @@
         </section>
     </main>
     <footer class="footer container">
-        <div class="footer-body border-top border-bottom">
+        <div class="footer-body">
             <div class="flex-column-reverse flex-lg-row justify-content-between row">
                 <div class="col">
                     <h3 class="footer-title">首頁</h3>
@@ -453,6 +439,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="./jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="./all.js"></script>
 </body>
 
